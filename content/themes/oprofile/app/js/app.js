@@ -5,9 +5,9 @@ var app = {
   init: function() {
     console.log('init');
 
-    // On cible nos éléments
+    // On cible les éléments
     app.$body = $('body');
-    // est la version jQuery de document.querySelector('body);
+    //  version jQuery de document.querySelector('body);
     app.$banner = $('.banner');
     app.$header = $('.header');
 
