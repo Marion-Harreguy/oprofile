@@ -1,4 +1,4 @@
-      <form action="" class="contact-form">
+      <!-- <form action="" class="contact-form">
         <div class="field is-half">
           <label for="name">Nom</label>
           <input type="text" name="name" id="name">
@@ -14,4 +14,8 @@
         <div class="field">
           <input type="submit" value="Envoyer">
         </div>
-      </form>
+      </form> -->
+      
+      <div class="contact-form">
+        <?php echo do_shortcode('[contact-form-7 id="42" title="Contact form 1"]'); ?>
+      </div>
