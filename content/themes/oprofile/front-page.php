@@ -9,26 +9,47 @@
       <section class="posts" id="posts">
 
       <?php 
-      
-      $args = [
-        'post_type' => 'post',
-        'posts_per_page' => 6,
-        'orderby' => 'rand',
-        'category__not_in' => 2
-      ];
 
-      $wpQueryArticles = new WP_Query($args);
-      
+      // ------------------------------------------
+      // vérifier les réglages du customizer
+      if (get_theme_mod('oprofile_posts_count')) {
+        $nb_posts_homepage = get_theme_mod('oprofile_posts_count');
+      } 
+      else { 
+        $nb_posts_homepage = 0;
+      }
+
       ?>
 
-      <?php if ($wpQueryArticles->have_posts()): while 
-      ($wpQueryArticles->have_posts()): $wpQueryArticles->the_post(); ?>
+      <?php
 
-        <?php get_template_part('template-parts/content/post-excerpt'); ?>
+      if ($nb_posts_homepage != 0): ?>
 
-      <?php endwhile; endif; ?>
+        <section class="posts" id="posts">
+      
+        <?php
 
-      </section>
+        $args = [
+          'post_type' => 'post',
+          'posts_per_page' => $nb_posts_homepage,
+          'orderby' => 'rand',
+          'category__not_in' => 2
+        ];
+
+        $wpQueryArticles = new WP_Query($args);
+        
+        ?>
+
+        <?php if ($wpQueryArticles->have_posts()): while 
+        ($wpQueryArticles->have_posts()): $wpQueryArticles->the_post(); ?>
+
+          <?php get_template_part('template-parts/content/post-excerpt'); ?>
+
+        <?php endwhile; endif; ?>
+
+        </section>
+
+      <?php endif; ?>
 
       <section class="grid" id="grid">
 

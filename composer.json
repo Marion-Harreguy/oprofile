@@ -16,7 +16,9 @@
         "johnpbloch/wordpress": "*",
         "wpackagist-theme/twentytwenty": "*",
         "wpackagist-plugin/akismet": "*",
-        "wpackagist-plugin/contact-form-7": "*"
+        "wpackagist-plugin/contact-form-7": "*",
+        "wpackagist-plugin/advanced-custom-fields": "*",
+        "wpackagist-plugin/advanced-custom-fields-font-awesome": "*"
     },
     "extra" : {
         "wordpress-install-dir": "wp",
