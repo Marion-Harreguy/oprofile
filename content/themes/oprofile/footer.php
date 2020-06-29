@@ -1,11 +1,17 @@
 </main>
 
+  <?php
+
+  if (get_theme_mod('oprofile_footer_active')) : ?>
+
     <footer class="footer" id="footer" style="background-color:<?php echo get_theme_mod('oprofile_footer_bgcolor'); ?>">
 
       <?php get_template_part('template-parts/footer/contact-form'); ?>
       <?php get_template_part('template-parts/footer/contact-info'); ?>
 
     </footer>
+
+  <?php endif; ?>
 
   </div>
 

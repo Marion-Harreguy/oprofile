@@ -8,7 +8,7 @@
 
             $email = get_theme_mod('oprofile_footer_email');
             $phone = get_theme_mod('oprofile_footer_phone');
-            $adress = nl2br(get_theme_mod('oprofile_footer_adress'));
+            $adress = nl2br(get_theme_mod('oprofile_footer_address'));
 
           ?>
           <a href="mailto:<?php echo $email; ?>" class="contact-info__part__content is-email"><?php echo $email; ?></a>

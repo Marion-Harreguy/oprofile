@@ -1,131 +1,58 @@
 <?php
 
-if(!function_exists('oprofile_customize_register')) {
+// on inclus nos fichiers de customizer (un fichier par section)
+require 'customizer/oprofile_home.php';
+require 'customizer/oprofile_footer.php';
 
-    function oprofile_customize_register($wp_customize) {
+if (!function_exists('oprofile_customize_register')) {
 
-        // étape 1: ajout d'un panel
+    function oprofile_customize_register($wp_customize)
+    {
+
+        // Première étape : l'ajout d'un panel
+        // https://developer.wordpress.org/reference/classes/wp_customize_manager/add_panel/
+
         $wp_customize->add_panel(
-            // identifiant unique du panel
+            // Identifiant unique du panel
             'oprofile_theme_panel',
             [
-                // emplacement dans le customizer
+                // Emplacement
                 'priority' => 1,
-                'title' => 'oProfile',
-                'description' => 'oProfile - gestion du thème'
+                // Description affichée dans l'UI
+                'description' => 'oProfile - Gestion du thème',
+                // Titre affiché dans l'UI
+                'title' => 'oProfile'
             ]
         );
 
-        // étape 2: ajout d'une section de notre panel
+        // Deuxième étape : ajouter une section dans notre panel
+        // https://developer.wordpress.org/reference/classes/wp_customize_manager/add_section/
         $wp_customize->add_section(
-            // identifiant unique du panel
+            // Identifiant unique de la section
             'oprofile_home',
             [
                 'title' => 'Accueil',
-                'description' => 'oProfile - gestion de la page Accueil',
-                // identifiant du panel dans lequel placer la section
+                'description' => 'oProfile - Gestion de la page Accueil',
+                // Identifiant du panel dans lequel placer la section
                 'panel' => 'oprofile_theme_panel'
             ]
         );
 
         $wp_customize->add_section(
-            // identifiant unique du panel
+            // Identifiant unique de la section
             'oprofile_footer',
             [
                 'title' => 'Footer',
-                'description' => 'oProfile - gestion du Footer',
-                // identifiant du panel dans lequel placer la section
+                'description' => 'oProfile - Gestion ddu footer',
+                // Identifiant du panel dans lequel placer la section
                 'panel' => 'oprofile_theme_panel'
             ]
         );
 
-        // étape 3: ajout d'un setting et control
-        // - créer le setting
-        $wp_customize->add_setting(
-            'oprofile_posts_count',
-            [
-                'default' => 6,
-            ]
-        ); 
-
-        // - ajouter le control
-        $wp_customize->add_control(
-            'oprofile_posts_count',
-            [
-                //le type d'input
-                'type' => 'number',
-                'input_attrs' => [
-                    'min' => 2,
-                    'max' => 10,
-                    'step' =>2
-                ],
-                // la section sur laquelle est rattachée le control
-                'section' => 'oprofile_home',
-                // label affiché dans l'UI
-                'label' => 'Nombre d\'articles',
-                'description' => 'Nombre d\'articles affiché sur la page d\'accueil'
-            ]
-        );
-
-        $wp_customize->add_setting(
-            'oprofile_footer_email',
-            [
-                'default' => 'marion@oprofile.io',
-            ]
-        ); 
-
-        $wp_customize->add_control(
-            'oprofile_footer_email',
-            [
-                //le type d'input
-                'type' => 'email',
-                // la section sur laquelle est rattachée le control
-                'section' => 'oprofile_footer',
-                // label affiché dans l'UI
-                'label' => 'Adresse email',
-                'description' => 'Adresse email affichée dans le footer'
-            ]
-        );
-
-        $wp_customize->add_setting(
-            'oprofile_footer_phone',
-            [
-                'default' => '06 06 06 06 06',
-            ]
-        ); 
-
-        $wp_customize->add_control(
-            'oprofile_footer_phone',
-            [
-                //le type d'input
-                'type' => 'text',
-                // la section sur laquelle est rattachée le control
-                'section' => 'oprofile_footer',
-                // label affiché dans l'UI
-                'label' => 'Téléphone',
-                'description' => 'Téléphone affiché dans le footer'
-            ]
-        );
-
-        $wp_customize->add_setting(
-            'oprofile_footer_adress',
-            [
-                'default' => '1 rue du canard 64500 Pays-Basque',
-            ]
-        ); 
-
-        $wp_customize->add_control(
-            'oprofile_footer_adress',
-            [
-                //le type d'input
-                'type' => 'textarea',
-                // la section sur laquelle est rattachée le control
-                'section' => 'oprofile_footer',
-                // label affiché dans l'UI
-                'label' => 'Adresse',
-                'description' => 'Adresse affichée dans le footer'
-            ]
-        );
+        // on appelle la fonction dédiée au customizer de la section home
+        oprofile_home($wp_customize);
+        // on appelle la fonction dédiée au customizer de la section footer
+        oprofile_footer($wp_customize);
     }
 }
 
