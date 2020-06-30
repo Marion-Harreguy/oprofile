@@ -2,6 +2,8 @@
 /wp
 /wp-config.php
 /content/plugins/*
+!/content/plugins/hello-plugin-oprofile
+!/content/plugins/hello-oclock
 /content/themes/*
 !/content/themes/oprofile
 /content/languages

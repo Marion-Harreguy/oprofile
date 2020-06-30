@@ -18,7 +18,9 @@
         "wpackagist-plugin/akismet": "*",
         "wpackagist-plugin/contact-form-7": "*",
         "wpackagist-plugin/advanced-custom-fields": "*",
-        "wpackagist-plugin/advanced-custom-fields-font-awesome": "*"
+        "wpackagist-plugin/advanced-custom-fields-font-awesome": "*",
+        "wpackagist-plugin/hello-dolly": "^1.7",
+        "wpackagist-plugin/simply-show-hooks": "^1.2"
     },
     "extra" : {
         "wordpress-install-dir": "wp",
