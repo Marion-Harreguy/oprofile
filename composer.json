@@ -20,7 +20,8 @@
         "wpackagist-plugin/advanced-custom-fields": "*",
         "wpackagist-plugin/advanced-custom-fields-font-awesome": "*",
         "wpackagist-plugin/hello-dolly": "^1.7",
-        "wpackagist-plugin/simply-show-hooks": "^1.2"
+        "wpackagist-plugin/simply-show-hooks": "^1.2",
+        "wpackagist-plugin/what-the-file": "^1.5"
     },
     "extra" : {
         "wordpress-install-dir": "wp",
