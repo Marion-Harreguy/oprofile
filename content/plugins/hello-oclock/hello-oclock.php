@@ -42,4 +42,8 @@ function helloclock_deactivate() {
     // désactivation du plugin
 }
 
+// Activation du plugin
 register_activation_hook(__FILE__, 'helloclock_activate');
+
+// Désactivation du plugin
+register_deactivation_hook(__FILE__, 'helloclock_deactivate');

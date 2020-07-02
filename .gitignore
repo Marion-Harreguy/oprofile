@@ -4,6 +4,7 @@
 /content/plugins/*
 !/content/plugins/hello-plugin-oprofile
 !/content/plugins/hello-oclock
+!/content/plugins/o-redirect-to
 /content/themes/*
 !/content/themes/oprofile
 /content/languages
