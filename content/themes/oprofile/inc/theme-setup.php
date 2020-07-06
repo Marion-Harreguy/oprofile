@@ -16,3 +16,5 @@ if (!function_exists('oprofile_setup')) {
 }
 
 add_action('after_setup_theme', 'oprofile_setup');
+
+load_theme_textdomain('oprofile', get_theme_file_path('languages'));

@@ -6,7 +6,7 @@
           </p>
         </div>
         <div class="action-bar">
-          <a href="#grid" class="action-button">En savoir plus</a>
-          <a href="#" class="action-button">Contact</a>
+          <a href="#grid" class="action-button"><?php _e('En savoir plus', 'oprofile'); ?></a>
+          <a href="#" class="action-button"><?php _e('Contact', 'oprofile'); ?></a>
         </div>
       </section> 
