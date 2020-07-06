@@ -85,22 +85,19 @@
 
       <section class="grid" id="grid">
 
-      <?php 
-      
+      <?php
+
       $args = [
-        'post_type' => 'post',
-        'category_name' => 'competences',
-        'orderby' => 'rand',
+          'post_type' => 'skill'
       ];
 
-      $wpQueryArticles = new WP_Query($args);
-      
+      $wpqueryArticles = new WP_Query($args);
+
       ?>
 
-      <?php if ($wpQueryArticles->have_posts()): while 
-      ($wpQueryArticles->have_posts()): $wpQueryArticles->the_post(); ?>
+      <?php if ($wpqueryArticles->have_posts()): while ($wpqueryArticles->have_posts()): $wpqueryArticles->the_post(); ?>
 
-        <?php get_template_part('template-parts/content/skill'); ?>
+          <?php get_template_part('template-parts/content/skill'); ?>
 
       <?php endwhile; endif; ?>
 

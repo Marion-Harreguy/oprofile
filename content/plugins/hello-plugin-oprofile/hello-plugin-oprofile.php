@@ -14,7 +14,7 @@ if (!defined('WPINC')) {
 }
 
 function say_hello() {
-    echo '<p style="padding:3em;color:black;">Coucou les amis !</p>';
+    echo '<p style="padding:3em;color:yellow;">Coucou les amis !</p>';
 }
 
 add_action('hookie', 'say_hello');
